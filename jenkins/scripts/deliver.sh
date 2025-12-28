@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 npm run ng build
-npm run ng serve &
+npm run start &
 sleep 1
 echo $! > .pidfile
 
