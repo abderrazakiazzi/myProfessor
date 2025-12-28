@@ -21,5 +21,13 @@ pipeline {
                 sh './jenkins/scripts/kill.sh'
             }
         }
+        stage('Test SSR') {
+            steps {
+                sh """
+                # Vérifier que le serveur répond
+                curl -s -o /dev/null -w "%{http_code}" http://localhost:$SSR_PORT
+                """
+            }
+        }
     }
 }
